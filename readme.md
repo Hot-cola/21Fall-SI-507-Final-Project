@@ -6,14 +6,21 @@ Show different regions COVID-19 data on maps and plot some charts
 Demo link (https://youtu.be/ok6veOSKuUw)
 
 main files
+
        DataConstruct.py
        display.py
+       
 data
+
        covidData.json
        geoData.json
+       
 raw data
+
     in folder covidData
+    
 display html demo
+
     in folder display_demo
     
 
