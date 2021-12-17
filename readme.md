@@ -7,9 +7,9 @@ Demo link (https://youtu.be/ok6veOSKuUw)
 
 include
    
-   --DataConstruct.py
+       DataConstruct.py
    
-   --display.py
+       display.py
 
 ## Running environment
 
