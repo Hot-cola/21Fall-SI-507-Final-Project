@@ -22,9 +22,9 @@ include
         webbrowser
 
 ## Data Source
-
     1. COVID-19 data from JHU CSSE on github (8 CSV files for 8 days)
         Source: [website](https://github.com/CSSEGISandData/COVID-19)
+        
     2. Google Geocoding API (need authorized key)
         Using to get the latitude and longitude of a place
         Reference [website](https://developers.google.com/maps/documentation/geocoding/overview)
