@@ -36,9 +36,8 @@ include
 
 1. Get data and reconstruct (optional)
 
-    run DataConstruct.py, it will read 8 .csv files to get [countries, states, cities, date, confirmed, deaths] information. And set function main(updateloc = True), it will fetch the [latitude, longitude] information from Google Geocoding API. # Be patient, it will take quite a long time. Then covid-19 data and geo data will be combined and reconstruct them in a tree construction, and save in covidData.json. Additional, geo data will be saved seperately in tree construction to GeoData.json.
-    Because all the data have been downloaded and saved, so this step is optional. Or used to update data.
-    
+   run DataConstruct.py, it will read 8 .csv files to get [countries, states, cities, date, confirmed, deaths] information. And set function main(updateloc = True), it will fetch the [latitude, longitude] information from Google Geocoding API. # Be patient, it will take quite a long time. Then covid-19 data and geo data will be combined and reconstruct them in a tree construction, and save in covidData.json. Additional, geo data will be saved seperately in tree construction to GeoData.json.
+   Because all the data have been downloaded and saved, so this step is optional. Or used to update data.
     
 2. access and display data
 
