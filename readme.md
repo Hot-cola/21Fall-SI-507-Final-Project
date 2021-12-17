@@ -6,11 +6,10 @@ Show different regions COVID-19 data on maps and plot some charts
 Demo link (https://youtu.be/ok6veOSKuUw)
 
 include
-    --DataConstruct.py
+   
+   --DataConstruct.py
     
     --display.py
- 
-    
 
 ## Running environment
 
