@@ -1,4 +1,4 @@
-# Umichi SI 507 Final Project
+# Umichi 21Fall SI 507 Final Project
 Guowen Shao
 
 Show different regions COVID-19 data on maps and plot some charts
@@ -9,7 +9,7 @@ include
     --DataConstruct.py
     --display.py
 
-# Running environment
+## Running environment
 
         python 3.8
     python package:
@@ -21,7 +21,7 @@ include
         pyecharts
         webbrowser
 
-# Data Source
+## Data Source
 
     1. COVID-19 data from JHU CSSE on github (8 CSV files for 8 days)
         Source: [website](https://github.com/CSSEGISandData/COVID-19)
@@ -30,7 +30,7 @@ include
         Reference [website](https://developers.google.com/maps/documentation/geocoding/overview)
         API keys supply: sign up a google account, follow the step on the above website. There is a 300$ and 91 days free usage for new people.
 
-# Rnning Step
+## Rnning Step
 
 1. Get data and reconstruct (optional)
     run DataConstruct.py, it will read 8 .csv files to get [countries, states, cities, date, confirmed, deaths] information. And set function main(updateloc = True), it will fetch the [latitude, longitude] information from Google Geocoding API. # Be patient, it will take quite a long time. Then covid-19 data and geo data will be combined and reconstruct them in a tree construction, and save in covidData.json. Additional, geo data will be saved seperately in tree construction to GeoData.json.
@@ -38,9 +38,13 @@ include
 2. access and display data
     a. run display.py, it will save and open 4 .html file at first. include 
         (1) world confirmed and deaths map (data update 11-22-2021), 
+        
         (2) world new cases and new deaths map (data update 11-23-2021), 
+        
         (3) bar chart to display world new cases and deaths in 7 days (data include form 11-23-2021 to 11-29-2021), 
+        
         (4) pie chart to display world different area percentage situation (data update 11-22-2021)
+        
     b. Then can use command line to see details about a country/area (e. g. United States, China, Canada...), and also save and open 3 .html file. include
         (1) heatmap with label to show country/area confirmed and deaths (data update 11-22-2021), 
         (2) bar chart to display country/area new cases and deaths in 7 days (data include form 11-23-2021 to 11-29-2021), 
