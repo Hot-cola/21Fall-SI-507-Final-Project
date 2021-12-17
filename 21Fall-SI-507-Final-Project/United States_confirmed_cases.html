@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_575d98e4549047c8b9ebf89842aa4e71 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@master/folium/templates/leaflet_heat.min.js"></script>
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_575d98e4549047c8b9ebf89842aa4e71" ></div>
+        
+</body>
+<script>    
+    
+            var map_575d98e4549047c8b9ebf89842aa4e71 = L.map(
+                "map_575d98e4549047c8b9ebf89842aa4e71",
+                {
+                    center: [34.15030532, -87.37325922],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 4,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_d1305dd6cdff4599b4d04014a15cb871 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+            var heat_map_30341f337b1e48cd8acfe852ba3eedd9 = L.heatLayer(
+                [[34.15030532, -87.37325922, 843161.0], [65.50815459, -151.39073869999999, 148825.0], [-14.270999999999999, -170.132, 4.0], [32.76895712, -113.90666740000002, 1245127.0], [35.00292371, -93.41171338, 524440.0], [39.26255932, -121.35356440000001, 5050339.0], [40.00346839, -102.4258673, 811813.0], [41.82972709, -71.98182316, 414978.0], [0.0, 0.0, 150625.0], [0.0, 0.0, 0.0], [38.90417773, -77.01655992, 66347.0], [30.61359259, -85.66002461, 3721503.0], [31.55162306, -83.85090513, 1656992.0], [0.0, 0.0, 3.0], [13.4443, 144.7937, 19117.0], [0.0, 0.0, 86939.0], [44.45275475, -116.78476880000001, 303928.0], [40.78579374, -89.20973757, 1775253.0], [41.13863784, -85.50791236, 1077372.0], [42.73305373, -93.73515113, 513637.0], [39.11727348, -94.76378225, 459085.0], [38.04178222, -84.7417556, 773602.0], [31.94449367, -92.63789413, 768041.0], [43.47808377, -70.71052375, 115865.0], [38.21274277, -75.33200012, 578851.0], [42.35026951, -71.90493363, 897874.0], [44.33853602, -85.57712739, 1427191.0], [44.71710183, -95.86842453, 875917.0], [32.77890365, -90.39656148, 511935.0], [37.27029221, -92.46914488, 898167.0], [45.93955949, -108.26914860000001, 188505.0], [40.87272618, -97.59710186, 303221.0], [39.44157041, -114.89996599999999, 453771.0], [0.0, 0.0, 153934.0], [40.85951833, -74.99556527, 1233511.0], [34.71669834, -106.8103733, 305579.0], [42.63505484, -77.10369919, 2679503.0], [35.90079156, -82.31237181, 1520471.0], [48.34522353, -103.4793387, 158707.0], [15.0979, 145.6739, 395.0], [40.84339621, -83.30734173, 1647237.0], [36.42316318, -99.26283045, 661289.0], [45.23330449, -123.3086963, 385790.0], [39.9210089, -76.73040131, 1691773.0], [18.080374, -66.858814, 187478.0], [0.0, 0.0, 0.0], [41.45961631, -71.61435303, 187531.0], [34.97281497, -81.18085944, 913950.0], [44.97881876, -101.6654622, 162790.0], [36.15496772, -86.29775884, 1306796.0], [28.86617238, -99.76050829, 4311138.0], [41.27116049, -111.9145117, 586758.0], [43.58010937, -72.58595157, 47609.0], [18.3358, -64.8963, 7466.0], [37.24374789, -76.54412815, 957570.0], [46.45738486, -120.73801259999999, 766008.0], [37.612327, -81.54511071, 289524.0], [44.45537896, -90.04158336, 953422.0], [43.83961191, -104.56748809999999, 109802.0]],
+                {"blur": 15, "maxZoom": 18, "minOpacity": 0.5, "radius": 25}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+            var marker_e1c06e0863c54953b802aefe39024478 = L.marker(
+                [34.15030532, -87.37325922],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_8e15a996b7d24862a96336ab7fc3a048 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f41be40ee10b400aa2f25aa506ab1639 = $(`<div id="html_f41be40ee10b400aa2f25aa506ab1639" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-Alabama:843161.0</div>`)[0];
+            popup_8e15a996b7d24862a96336ab7fc3a048.setContent(html_f41be40ee10b400aa2f25aa506ab1639);
+        
+
+        marker_e1c06e0863c54953b802aefe39024478.bindPopup(popup_8e15a996b7d24862a96336ab7fc3a048)
+        ;
+
+        
+    
+    
+            var marker_c5679cb95d1f4e83832e504377d2936d = L.marker(
+                [65.50815459, -151.39073869999999],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_2d56f01c69f242bdbcd2ea61d293b2c3 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_06c82910744e456a8e4b895508495b0a = $(`<div id="html_06c82910744e456a8e4b895508495b0a" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-Alaska:148825.0</div>`)[0];
+            popup_2d56f01c69f242bdbcd2ea61d293b2c3.setContent(html_06c82910744e456a8e4b895508495b0a);
+        
+
+        marker_c5679cb95d1f4e83832e504377d2936d.bindPopup(popup_2d56f01c69f242bdbcd2ea61d293b2c3)
+        ;
+
+        
+    
+    
+            var marker_2f3d167f77dd4a7ca351327819c85332 = L.marker(
+                [-14.270999999999999, -170.132],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_253ba46fa9b4465c80f918269b1f29e4 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e3bc070dd52e408c824d6d3bfab02842 = $(`<div id="html_e3bc070dd52e408c824d6d3bfab02842" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-American Samoa:4.0</div>`)[0];
+            popup_253ba46fa9b4465c80f918269b1f29e4.setContent(html_e3bc070dd52e408c824d6d3bfab02842);
+        
+
+        marker_2f3d167f77dd4a7ca351327819c85332.bindPopup(popup_253ba46fa9b4465c80f918269b1f29e4)
+        ;
+
+        
+    
+    
+            var marker_0850da9a7afd4d7996574ee597b778a8 = L.marker(
+                [32.76895712, -113.90666740000002],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_0025114d820141019504ebfc7f9c30c5 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d56cadb337c44b3088c3f85105c9a6e8 = $(`<div id="html_d56cadb337c44b3088c3f85105c9a6e8" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-Arizona:1245127.0</div>`)[0];
+            popup_0025114d820141019504ebfc7f9c30c5.setContent(html_d56cadb337c44b3088c3f85105c9a6e8);
+        
+
+        marker_0850da9a7afd4d7996574ee597b778a8.bindPopup(popup_0025114d820141019504ebfc7f9c30c5)
+        ;
+
+        
+    
+    
+            var marker_a8b07977537440a6b0930ba016872462 = L.marker(
+                [35.00292371, -93.41171338],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_42688aa69b5644dfa3f487db28c95a49 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_4ecd8f8bb34641d1acd8aa9c24f97a5d = $(`<div id="html_4ecd8f8bb34641d1acd8aa9c24f97a5d" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-Arkansas:524440.0</div>`)[0];
+            popup_42688aa69b5644dfa3f487db28c95a49.setContent(html_4ecd8f8bb34641d1acd8aa9c24f97a5d);
+        
+
+        marker_a8b07977537440a6b0930ba016872462.bindPopup(popup_42688aa69b5644dfa3f487db28c95a49)
+        ;
+
+        
+    
+    
+            var marker_9350eb4dcfea43b9b712b126c2e65b04 = L.marker(
+                [39.26255932, -121.35356440000001],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_b77e9d84431b422db1ec63e0745595bb = L.popup({"maxWidth": "100%"});
+
+        
+            var html_293bbc2d765a4a0dae59c73660ea5a18 = $(`<div id="html_293bbc2d765a4a0dae59c73660ea5a18" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-California:5050339.0</div>`)[0];
+            popup_b77e9d84431b422db1ec63e0745595bb.setContent(html_293bbc2d765a4a0dae59c73660ea5a18);
+        
+
+        marker_9350eb4dcfea43b9b712b126c2e65b04.bindPopup(popup_b77e9d84431b422db1ec63e0745595bb)
+        ;
+
+        
+    
+    
+            var marker_686a0dacae2f4c61a6c54784dbb19301 = L.marker(
+                [40.00346839, -102.4258673],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_6ec6fac257c343b2b56d408bba137e1a = L.popup({"maxWidth": "100%"});
+
+        
+            var html_13260a32c3b44d95b000a118b29e5d3c = $(`<div id="html_13260a32c3b44d95b000a118b29e5d3c" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-Colorado:811813.0</div>`)[0];
+            popup_6ec6fac257c343b2b56d408bba137e1a.setContent(html_13260a32c3b44d95b000a118b29e5d3c);
+        
+
+        marker_686a0dacae2f4c61a6c54784dbb19301.bindPopup(popup_6ec6fac257c343b2b56d408bba137e1a)
+        ;
+
+        
+    
+    
+            var marker_18fb8a18a3694d6690560da6255b973f = L.marker(
+                [41.82972709, -71.98182316],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_fea1059e4c7e45b7b0257e882099b16d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d942022ac9d24916a8bbc38af73ec8ea = $(`<div id="html_d942022ac9d24916a8bbc38af73ec8ea" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-Connecticut:414978.0</div>`)[0];
+            popup_fea1059e4c7e45b7b0257e882099b16d.setContent(html_d942022ac9d24916a8bbc38af73ec8ea);
+        
+
+        marker_18fb8a18a3694d6690560da6255b973f.bindPopup(popup_fea1059e4c7e45b7b0257e882099b16d)
+        ;
+
+        
+    
+    
+            var marker_fc0f9821ba534243aeca1107b9dd98a3 = L.marker(
+                [0.0, 0.0],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_7beca46b76fb4141a2a4cab0a1ba9f5c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7b72d123430741cdaaac3a9ee92fe836 = $(`<div id="html_7b72d123430741cdaaac3a9ee92fe836" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-Delaware:150625.0</div>`)[0];
+            popup_7beca46b76fb4141a2a4cab0a1ba9f5c.setContent(html_7b72d123430741cdaaac3a9ee92fe836);
+        
+
+        marker_fc0f9821ba534243aeca1107b9dd98a3.bindPopup(popup_7beca46b76fb4141a2a4cab0a1ba9f5c)
+        ;
+
+        
+    
+    
+            var marker_dce33482a4714cd2a290b970489b5fd9 = L.marker(
+                [0.0, 0.0],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_b70c20072ef141f49c547bb6bcc93a9e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f375ab9345ea455ca2fd40cbcef3c9b2 = $(`<div id="html_f375ab9345ea455ca2fd40cbcef3c9b2" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-Diamond Princess:0.0</div>`)[0];
+            popup_b70c20072ef141f49c547bb6bcc93a9e.setContent(html_f375ab9345ea455ca2fd40cbcef3c9b2);
+        
+
+        marker_dce33482a4714cd2a290b970489b5fd9.bindPopup(popup_b70c20072ef141f49c547bb6bcc93a9e)
+        ;
+
+        
+    
+    
+            var marker_a9b419894ece4a93a51df92865c009e6 = L.marker(
+                [38.90417773, -77.01655992],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_72bf1cea45d542faac6e1731a2c658b8 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8c228448c50b40d783a8b30932369d7a = $(`<div id="html_8c228448c50b40d783a8b30932369d7a" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-District of Columbia:66347.0</div>`)[0];
+            popup_72bf1cea45d542faac6e1731a2c658b8.setContent(html_8c228448c50b40d783a8b30932369d7a);
+        
+
+        marker_a9b419894ece4a93a51df92865c009e6.bindPopup(popup_72bf1cea45d542faac6e1731a2c658b8)
+        ;
+
+        
+    
+    
+            var marker_691750d6264f4d9d89aaabf0e9d6f2ee = L.marker(
+                [30.61359259, -85.66002461],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_4ab032c6ac394e419503b2e1a8618b59 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d1013bb5426b4b8f85ac51ad580a603e = $(`<div id="html_d1013bb5426b4b8f85ac51ad580a603e" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-Florida:3721503.0</div>`)[0];
+            popup_4ab032c6ac394e419503b2e1a8618b59.setContent(html_d1013bb5426b4b8f85ac51ad580a603e);
+        
+
+        marker_691750d6264f4d9d89aaabf0e9d6f2ee.bindPopup(popup_4ab032c6ac394e419503b2e1a8618b59)
+        ;
+
+        
+    
+    
+            var marker_726f64c0416f4906b0f438d065b8aff2 = L.marker(
+                [31.55162306, -83.85090513],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_2d1b068503a74469a654b744419165a8 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_53f0b659962340d0858e09552f3ebc5c = $(`<div id="html_53f0b659962340d0858e09552f3ebc5c" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-Georgia:1656992.0</div>`)[0];
+            popup_2d1b068503a74469a654b744419165a8.setContent(html_53f0b659962340d0858e09552f3ebc5c);
+        
+
+        marker_726f64c0416f4906b0f438d065b8aff2.bindPopup(popup_2d1b068503a74469a654b744419165a8)
+        ;
+
+        
+    
+    
+            var marker_2425c8cc0dfd456ca84d69bb4075ce3e = L.marker(
+                [0.0, 0.0],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_0b4d57eb618249aabbfdf997d4123063 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0383d78efc654edd8bdd22e1085aff1a = $(`<div id="html_0383d78efc654edd8bdd22e1085aff1a" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-Grand Princess:3.0</div>`)[0];
+            popup_0b4d57eb618249aabbfdf997d4123063.setContent(html_0383d78efc654edd8bdd22e1085aff1a);
+        
+
+        marker_2425c8cc0dfd456ca84d69bb4075ce3e.bindPopup(popup_0b4d57eb618249aabbfdf997d4123063)
+        ;
+
+        
+    
+    
+            var marker_b5529f1654274723a7e8d098e36366ab = L.marker(
+                [13.4443, 144.7937],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_a24acb299d5d44b59272ee586ac94feb = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f6a602769b834b32adc13d40c9e0c8f6 = $(`<div id="html_f6a602769b834b32adc13d40c9e0c8f6" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-Guam:19117.0</div>`)[0];
+            popup_a24acb299d5d44b59272ee586ac94feb.setContent(html_f6a602769b834b32adc13d40c9e0c8f6);
+        
+
+        marker_b5529f1654274723a7e8d098e36366ab.bindPopup(popup_a24acb299d5d44b59272ee586ac94feb)
+        ;
+
+        
+    
+    
+            var marker_dfe329be8cce400e81fdd1e4c0feab78 = L.marker(
+                [0.0, 0.0],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_3cc224a59d114f468d749b01387bd4ea = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8c65b42705934a0fab947c7a7b0baa0f = $(`<div id="html_8c65b42705934a0fab947c7a7b0baa0f" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-Hawaii:86939.0</div>`)[0];
+            popup_3cc224a59d114f468d749b01387bd4ea.setContent(html_8c65b42705934a0fab947c7a7b0baa0f);
+        
+
+        marker_dfe329be8cce400e81fdd1e4c0feab78.bindPopup(popup_3cc224a59d114f468d749b01387bd4ea)
+        ;
+
+        
+    
+    
+            var marker_1ada6b63c6d5490f9ea0644cba2900fa = L.marker(
+                [44.45275475, -116.78476880000001],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_e3945bc66e9044a2a559832ca97775e9 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9051d2fcf02742adbe73162431f40b85 = $(`<div id="html_9051d2fcf02742adbe73162431f40b85" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-Idaho:303928.0</div>`)[0];
+            popup_e3945bc66e9044a2a559832ca97775e9.setContent(html_9051d2fcf02742adbe73162431f40b85);
+        
+
+        marker_1ada6b63c6d5490f9ea0644cba2900fa.bindPopup(popup_e3945bc66e9044a2a559832ca97775e9)
+        ;
+
+        
+    
+    
+            var marker_94e7412a914f4cfd89dbe95490e3c624 = L.marker(
+                [40.78579374, -89.20973757],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_f835cc4bef5b4350a929c315acf9a76b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_17d6d2fda9704dc28ce979f6dab4d2c6 = $(`<div id="html_17d6d2fda9704dc28ce979f6dab4d2c6" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-Illinois:1775253.0</div>`)[0];
+            popup_f835cc4bef5b4350a929c315acf9a76b.setContent(html_17d6d2fda9704dc28ce979f6dab4d2c6);
+        
+
+        marker_94e7412a914f4cfd89dbe95490e3c624.bindPopup(popup_f835cc4bef5b4350a929c315acf9a76b)
+        ;
+
+        
+    
+    
+            var marker_6ec0a1ae1fb2422a9fbcb8bf3e51ae37 = L.marker(
+                [41.13863784, -85.50791236],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_c06504d6e73e441580693a7af1e0b71f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b544e24d031b4c92901aa20f0f53bf8c = $(`<div id="html_b544e24d031b4c92901aa20f0f53bf8c" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-Indiana:1077372.0</div>`)[0];
+            popup_c06504d6e73e441580693a7af1e0b71f.setContent(html_b544e24d031b4c92901aa20f0f53bf8c);
+        
+
+        marker_6ec0a1ae1fb2422a9fbcb8bf3e51ae37.bindPopup(popup_c06504d6e73e441580693a7af1e0b71f)
+        ;
+
+        
+    
+    
+            var marker_e36cf6b16e6744aba42d60f441d84293 = L.marker(
+                [42.73305373, -93.73515113],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_acbed75953dd40da9fedea9a63a29d0f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b5183a434c894849b7acd037c207ca5d = $(`<div id="html_b5183a434c894849b7acd037c207ca5d" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-Iowa:513637.0</div>`)[0];
+            popup_acbed75953dd40da9fedea9a63a29d0f.setContent(html_b5183a434c894849b7acd037c207ca5d);
+        
+
+        marker_e36cf6b16e6744aba42d60f441d84293.bindPopup(popup_acbed75953dd40da9fedea9a63a29d0f)
+        ;
+
+        
+    
+    
+            var marker_70d2f4b843bd4126a32788786da19ad2 = L.marker(
+                [39.11727348, -94.76378225],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_1cf19098682a42dd9d00f3495f71c47e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a11967843d224799aba93e0b4985c35f = $(`<div id="html_a11967843d224799aba93e0b4985c35f" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-Kansas:459085.0</div>`)[0];
+            popup_1cf19098682a42dd9d00f3495f71c47e.setContent(html_a11967843d224799aba93e0b4985c35f);
+        
+
+        marker_70d2f4b843bd4126a32788786da19ad2.bindPopup(popup_1cf19098682a42dd9d00f3495f71c47e)
+        ;
+
+        
+    
+    
+            var marker_0e46038fee5d4f05820df7934004ccfc = L.marker(
+                [38.04178222, -84.7417556],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_f635539a37414d2ebb1958bb329fb017 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_91c79846b2b24a608dc50c5b4224e19d = $(`<div id="html_91c79846b2b24a608dc50c5b4224e19d" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-Kentucky:773602.0</div>`)[0];
+            popup_f635539a37414d2ebb1958bb329fb017.setContent(html_91c79846b2b24a608dc50c5b4224e19d);
+        
+
+        marker_0e46038fee5d4f05820df7934004ccfc.bindPopup(popup_f635539a37414d2ebb1958bb329fb017)
+        ;
+
+        
+    
+    
+            var marker_2bf7db12f7e64c88b8c2ce85411a6b77 = L.marker(
+                [31.94449367, -92.63789413],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_eb16b87276394dcf83861d1d78e7f091 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3b439d28374e43a6912fd63f28a7bd78 = $(`<div id="html_3b439d28374e43a6912fd63f28a7bd78" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-Louisiana:768041.0</div>`)[0];
+            popup_eb16b87276394dcf83861d1d78e7f091.setContent(html_3b439d28374e43a6912fd63f28a7bd78);
+        
+
+        marker_2bf7db12f7e64c88b8c2ce85411a6b77.bindPopup(popup_eb16b87276394dcf83861d1d78e7f091)
+        ;
+
+        
+    
+    
+            var marker_03f62ef5ebfd412194b7e2fa3549c306 = L.marker(
+                [43.47808377, -70.71052375],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_a51942e09107426b9f7ed76d3477d704 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_439c67f349224f758e5f76005df5816b = $(`<div id="html_439c67f349224f758e5f76005df5816b" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-Maine:115865.0</div>`)[0];
+            popup_a51942e09107426b9f7ed76d3477d704.setContent(html_439c67f349224f758e5f76005df5816b);
+        
+
+        marker_03f62ef5ebfd412194b7e2fa3549c306.bindPopup(popup_a51942e09107426b9f7ed76d3477d704)
+        ;
+
+        
+    
+    
+            var marker_48d202d181304b27b5ded6e4758b62b7 = L.marker(
+                [38.21274277, -75.33200012],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_4343ea406eed4a0d9eed1d72d09685e6 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3addb1ec661b4c088580e5e9acb58adc = $(`<div id="html_3addb1ec661b4c088580e5e9acb58adc" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-Maryland:578851.0</div>`)[0];
+            popup_4343ea406eed4a0d9eed1d72d09685e6.setContent(html_3addb1ec661b4c088580e5e9acb58adc);
+        
+
+        marker_48d202d181304b27b5ded6e4758b62b7.bindPopup(popup_4343ea406eed4a0d9eed1d72d09685e6)
+        ;
+
+        
+    
+    
+            var marker_d0a5619ffc8a4b78b821da483369c37a = L.marker(
+                [42.35026951, -71.90493363],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_1a5b6862eebf4e0885a967f3d70267f4 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_439f0e1d15444b61b432b4c9026ea3a9 = $(`<div id="html_439f0e1d15444b61b432b4c9026ea3a9" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-Massachusetts:897874.0</div>`)[0];
+            popup_1a5b6862eebf4e0885a967f3d70267f4.setContent(html_439f0e1d15444b61b432b4c9026ea3a9);
+        
+
+        marker_d0a5619ffc8a4b78b821da483369c37a.bindPopup(popup_1a5b6862eebf4e0885a967f3d70267f4)
+        ;
+
+        
+    
+    
+            var marker_bd8e4c2414d1426c9d557f539ffc5018 = L.marker(
+                [44.33853602, -85.57712739],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_417aa15455f34f24b2ea1bb5a2d7eadf = L.popup({"maxWidth": "100%"});
+
+        
+            var html_fcc044863edb4c8b900214bc01322ff8 = $(`<div id="html_fcc044863edb4c8b900214bc01322ff8" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-Michigan:1427191.0</div>`)[0];
+            popup_417aa15455f34f24b2ea1bb5a2d7eadf.setContent(html_fcc044863edb4c8b900214bc01322ff8);
+        
+
+        marker_bd8e4c2414d1426c9d557f539ffc5018.bindPopup(popup_417aa15455f34f24b2ea1bb5a2d7eadf)
+        ;
+
+        
+    
+    
+            var marker_eaa53becc7eb4b3089804b91d3139a4d = L.marker(
+                [44.71710183, -95.86842453],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_2d18653b706a4afeb61fdb12e4fbaeef = L.popup({"maxWidth": "100%"});
+
+        
+            var html_2ccfe1809179477bb6686fca036786b8 = $(`<div id="html_2ccfe1809179477bb6686fca036786b8" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-Minnesota:875917.0</div>`)[0];
+            popup_2d18653b706a4afeb61fdb12e4fbaeef.setContent(html_2ccfe1809179477bb6686fca036786b8);
+        
+
+        marker_eaa53becc7eb4b3089804b91d3139a4d.bindPopup(popup_2d18653b706a4afeb61fdb12e4fbaeef)
+        ;
+
+        
+    
+    
+            var marker_f56ab41b7bf34a6da406d023987d9628 = L.marker(
+                [32.77890365, -90.39656148],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_da7c77e6e95f4cbe8907818b0cf266c7 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_67f989529929423fb5607bbf6c2eb30d = $(`<div id="html_67f989529929423fb5607bbf6c2eb30d" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-Mississippi:511935.0</div>`)[0];
+            popup_da7c77e6e95f4cbe8907818b0cf266c7.setContent(html_67f989529929423fb5607bbf6c2eb30d);
+        
+
+        marker_f56ab41b7bf34a6da406d023987d9628.bindPopup(popup_da7c77e6e95f4cbe8907818b0cf266c7)
+        ;
+
+        
+    
+    
+            var marker_13d816cd988e409d95dea86765c32a8f = L.marker(
+                [37.27029221, -92.46914488],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_3dc6e8de11ca4eeb94bdfd5ca423b949 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_d51e798fb02c412d8c4e2f1f776c0286 = $(`<div id="html_d51e798fb02c412d8c4e2f1f776c0286" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-Missouri:898167.0</div>`)[0];
+            popup_3dc6e8de11ca4eeb94bdfd5ca423b949.setContent(html_d51e798fb02c412d8c4e2f1f776c0286);
+        
+
+        marker_13d816cd988e409d95dea86765c32a8f.bindPopup(popup_3dc6e8de11ca4eeb94bdfd5ca423b949)
+        ;
+
+        
+    
+    
+            var marker_d8fb38f034444d11af6b1d06031a034c = L.marker(
+                [45.93955949, -108.26914860000001],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_5281cbf736994a89b75d57c4929c529e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ca5e55dae13c43058cd5eecf7f9cc461 = $(`<div id="html_ca5e55dae13c43058cd5eecf7f9cc461" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-Montana:188505.0</div>`)[0];
+            popup_5281cbf736994a89b75d57c4929c529e.setContent(html_ca5e55dae13c43058cd5eecf7f9cc461);
+        
+
+        marker_d8fb38f034444d11af6b1d06031a034c.bindPopup(popup_5281cbf736994a89b75d57c4929c529e)
+        ;
+
+        
+    
+    
+            var marker_3021ee0ff7eb419f927737c3f1133368 = L.marker(
+                [40.87272618, -97.59710186],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_c4512d71b7b34cd9a4d5762e91088f7d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_440e29014435480089be391281570c6a = $(`<div id="html_440e29014435480089be391281570c6a" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-Nebraska:303221.0</div>`)[0];
+            popup_c4512d71b7b34cd9a4d5762e91088f7d.setContent(html_440e29014435480089be391281570c6a);
+        
+
+        marker_3021ee0ff7eb419f927737c3f1133368.bindPopup(popup_c4512d71b7b34cd9a4d5762e91088f7d)
+        ;
+
+        
+    
+    
+            var marker_f9b523f025484abe857e72df7a5b54ca = L.marker(
+                [39.44157041, -114.89996599999999],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_300c3c095fb74e5db2ec32e3876d7b03 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b6e61bd17d3e43a398bc3f8c7ef648e6 = $(`<div id="html_b6e61bd17d3e43a398bc3f8c7ef648e6" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-Nevada:453771.0</div>`)[0];
+            popup_300c3c095fb74e5db2ec32e3876d7b03.setContent(html_b6e61bd17d3e43a398bc3f8c7ef648e6);
+        
+
+        marker_f9b523f025484abe857e72df7a5b54ca.bindPopup(popup_300c3c095fb74e5db2ec32e3876d7b03)
+        ;
+
+        
+    
+    
+            var marker_bfa888168c4a431ca1bf964a517269e4 = L.marker(
+                [0.0, 0.0],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_b15fb094c873497f8635727c9023a501 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_528a0a86dc73484b90e78756e6395149 = $(`<div id="html_528a0a86dc73484b90e78756e6395149" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-New Hampshire:153934.0</div>`)[0];
+            popup_b15fb094c873497f8635727c9023a501.setContent(html_528a0a86dc73484b90e78756e6395149);
+        
+
+        marker_bfa888168c4a431ca1bf964a517269e4.bindPopup(popup_b15fb094c873497f8635727c9023a501)
+        ;
+
+        
+    
+    
+            var marker_a2492dd2dfd749a8af1283c39283415f = L.marker(
+                [40.85951833, -74.99556527],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_62ecc97d2eb740c59ed128d4f0aa3b8a = L.popup({"maxWidth": "100%"});
+
+        
+            var html_333640193c0f4e89bc5f74edb292289e = $(`<div id="html_333640193c0f4e89bc5f74edb292289e" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-New Jersey:1233511.0</div>`)[0];
+            popup_62ecc97d2eb740c59ed128d4f0aa3b8a.setContent(html_333640193c0f4e89bc5f74edb292289e);
+        
+
+        marker_a2492dd2dfd749a8af1283c39283415f.bindPopup(popup_62ecc97d2eb740c59ed128d4f0aa3b8a)
+        ;
+
+        
+    
+    
+            var marker_468666cf2cec4272acc66bf54bf455f9 = L.marker(
+                [34.71669834, -106.8103733],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_4df42813b90a40a8933dcf6afc27ae53 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_6d3b7c610a534e0185887edfe83313e6 = $(`<div id="html_6d3b7c610a534e0185887edfe83313e6" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-New Mexico:305579.0</div>`)[0];
+            popup_4df42813b90a40a8933dcf6afc27ae53.setContent(html_6d3b7c610a534e0185887edfe83313e6);
+        
+
+        marker_468666cf2cec4272acc66bf54bf455f9.bindPopup(popup_4df42813b90a40a8933dcf6afc27ae53)
+        ;
+
+        
+    
+    
+            var marker_9401209ab2514b0bb1bbb4bd68b1339c = L.marker(
+                [42.63505484, -77.10369919],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_81856b48610949de8212400b4720b4be = L.popup({"maxWidth": "100%"});
+
+        
+            var html_683cde4644aa4b569ae4ee487b2cad23 = $(`<div id="html_683cde4644aa4b569ae4ee487b2cad23" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-New York:2679503.0</div>`)[0];
+            popup_81856b48610949de8212400b4720b4be.setContent(html_683cde4644aa4b569ae4ee487b2cad23);
+        
+
+        marker_9401209ab2514b0bb1bbb4bd68b1339c.bindPopup(popup_81856b48610949de8212400b4720b4be)
+        ;
+
+        
+    
+    
+            var marker_cf1a78fd05fd4c6a9790a9ee94a05ced = L.marker(
+                [35.90079156, -82.31237181],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_fd421aa828604ca6b24b3e5ab246a0ee = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3ad1d32d6f9e448cb0a5e1c1de1c7bfe = $(`<div id="html_3ad1d32d6f9e448cb0a5e1c1de1c7bfe" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-North Carolina:1520471.0</div>`)[0];
+            popup_fd421aa828604ca6b24b3e5ab246a0ee.setContent(html_3ad1d32d6f9e448cb0a5e1c1de1c7bfe);
+        
+
+        marker_cf1a78fd05fd4c6a9790a9ee94a05ced.bindPopup(popup_fd421aa828604ca6b24b3e5ab246a0ee)
+        ;
+
+        
+    
+    
+            var marker_8aad642834d244ae80fa265ec7c9e4bb = L.marker(
+                [48.34522353, -103.4793387],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_d53497690f5b4bd09aa9015a01b3d2f1 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_37935a86b3c34ea2ab9bbd2be6a2ad2c = $(`<div id="html_37935a86b3c34ea2ab9bbd2be6a2ad2c" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-North Dakota:158707.0</div>`)[0];
+            popup_d53497690f5b4bd09aa9015a01b3d2f1.setContent(html_37935a86b3c34ea2ab9bbd2be6a2ad2c);
+        
+
+        marker_8aad642834d244ae80fa265ec7c9e4bb.bindPopup(popup_d53497690f5b4bd09aa9015a01b3d2f1)
+        ;
+
+        
+    
+    
+            var marker_db8d0c61360c4094897f35feb04d9e7b = L.marker(
+                [15.0979, 145.6739],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_f093e1ea1bcf4de792f2038b5d8b8a6d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ab599744e01c449e9b37c60ef77ed6f6 = $(`<div id="html_ab599744e01c449e9b37c60ef77ed6f6" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-Northern Mariana Islands:395.0</div>`)[0];
+            popup_f093e1ea1bcf4de792f2038b5d8b8a6d.setContent(html_ab599744e01c449e9b37c60ef77ed6f6);
+        
+
+        marker_db8d0c61360c4094897f35feb04d9e7b.bindPopup(popup_f093e1ea1bcf4de792f2038b5d8b8a6d)
+        ;
+
+        
+    
+    
+            var marker_e6a4779e4051467a8c7859624665857b = L.marker(
+                [40.84339621, -83.30734173],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_f72017920335456b96afa30bec59c76b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_880ec19aec8b4b98b0031ee876f70a58 = $(`<div id="html_880ec19aec8b4b98b0031ee876f70a58" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-Ohio:1647237.0</div>`)[0];
+            popup_f72017920335456b96afa30bec59c76b.setContent(html_880ec19aec8b4b98b0031ee876f70a58);
+        
+
+        marker_e6a4779e4051467a8c7859624665857b.bindPopup(popup_f72017920335456b96afa30bec59c76b)
+        ;
+
+        
+    
+    
+            var marker_b8a2df5d040b4981a527b699d42288d1 = L.marker(
+                [36.42316318, -99.26283045],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_350bded7124e42a08589f6483fb0d56d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3c2b0a43c4bd43d785fd33eafe9da6bc = $(`<div id="html_3c2b0a43c4bd43d785fd33eafe9da6bc" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-Oklahoma:661289.0</div>`)[0];
+            popup_350bded7124e42a08589f6483fb0d56d.setContent(html_3c2b0a43c4bd43d785fd33eafe9da6bc);
+        
+
+        marker_b8a2df5d040b4981a527b699d42288d1.bindPopup(popup_350bded7124e42a08589f6483fb0d56d)
+        ;
+
+        
+    
+    
+            var marker_9db967f54f8a485f9382b27789cb47f1 = L.marker(
+                [45.23330449, -123.3086963],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_11f7225495344542bfcd34ace7d7f001 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_4cefd21014f54a5a8842798e5d4b8e04 = $(`<div id="html_4cefd21014f54a5a8842798e5d4b8e04" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-Oregon:385790.0</div>`)[0];
+            popup_11f7225495344542bfcd34ace7d7f001.setContent(html_4cefd21014f54a5a8842798e5d4b8e04);
+        
+
+        marker_9db967f54f8a485f9382b27789cb47f1.bindPopup(popup_11f7225495344542bfcd34ace7d7f001)
+        ;
+
+        
+    
+    
+            var marker_3f1dbbd21ed3432d8f0d7f61a2762f12 = L.marker(
+                [39.9210089, -76.73040131],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_9dc612949da4427281119c5665e15e8d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_63f8dab7a222439ab27a3c5cc2eeda69 = $(`<div id="html_63f8dab7a222439ab27a3c5cc2eeda69" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-Pennsylvania:1691773.0</div>`)[0];
+            popup_9dc612949da4427281119c5665e15e8d.setContent(html_63f8dab7a222439ab27a3c5cc2eeda69);
+        
+
+        marker_3f1dbbd21ed3432d8f0d7f61a2762f12.bindPopup(popup_9dc612949da4427281119c5665e15e8d)
+        ;
+
+        
+    
+    
+            var marker_99add9cde6df4489b64a44eba3697e86 = L.marker(
+                [18.080374, -66.858814],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_127e38df62714556a4c5be410e141c06 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f747f4785b3d4c9baa4baaae88b58685 = $(`<div id="html_f747f4785b3d4c9baa4baaae88b58685" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-Puerto Rico:187478.0</div>`)[0];
+            popup_127e38df62714556a4c5be410e141c06.setContent(html_f747f4785b3d4c9baa4baaae88b58685);
+        
+
+        marker_99add9cde6df4489b64a44eba3697e86.bindPopup(popup_127e38df62714556a4c5be410e141c06)
+        ;
+
+        
+    
+    
+            var marker_b793f8adc1384e6fa00bc7fec30b6350 = L.marker(
+                [0.0, 0.0],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_e5b749081edd4f3b91f9809e88305c41 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b06cc137b7c044c9b5f8e24075864460 = $(`<div id="html_b06cc137b7c044c9b5f8e24075864460" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-Recovered:0.0</div>`)[0];
+            popup_e5b749081edd4f3b91f9809e88305c41.setContent(html_b06cc137b7c044c9b5f8e24075864460);
+        
+
+        marker_b793f8adc1384e6fa00bc7fec30b6350.bindPopup(popup_e5b749081edd4f3b91f9809e88305c41)
+        ;
+
+        
+    
+    
+            var marker_9b2a38e687ea47939cc905207c1e699d = L.marker(
+                [41.45961631, -71.61435303],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_b2dc980582e842bfbe3e3875b0e26b22 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_aff8740f05404a588a35349d9a294842 = $(`<div id="html_aff8740f05404a588a35349d9a294842" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-Rhode Island:187531.0</div>`)[0];
+            popup_b2dc980582e842bfbe3e3875b0e26b22.setContent(html_aff8740f05404a588a35349d9a294842);
+        
+
+        marker_9b2a38e687ea47939cc905207c1e699d.bindPopup(popup_b2dc980582e842bfbe3e3875b0e26b22)
+        ;
+
+        
+    
+    
+            var marker_acffadabd58846e3a415a2a80eda321b = L.marker(
+                [34.97281497, -81.18085944],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_89cb93e97245414292ab5d32dfe8d160 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_c6751ffc6a4b44fb8f4ec4f4270147dd = $(`<div id="html_c6751ffc6a4b44fb8f4ec4f4270147dd" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-South Carolina:913950.0</div>`)[0];
+            popup_89cb93e97245414292ab5d32dfe8d160.setContent(html_c6751ffc6a4b44fb8f4ec4f4270147dd);
+        
+
+        marker_acffadabd58846e3a415a2a80eda321b.bindPopup(popup_89cb93e97245414292ab5d32dfe8d160)
+        ;
+
+        
+    
+    
+            var marker_87588cc81efa430aaedfcd3f5d416492 = L.marker(
+                [44.97881876, -101.6654622],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_a6356e4783724b1590547fe899b16dd7 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_c0f5ad89fdcb4434b19e53d7a9645095 = $(`<div id="html_c0f5ad89fdcb4434b19e53d7a9645095" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-South Dakota:162790.0</div>`)[0];
+            popup_a6356e4783724b1590547fe899b16dd7.setContent(html_c0f5ad89fdcb4434b19e53d7a9645095);
+        
+
+        marker_87588cc81efa430aaedfcd3f5d416492.bindPopup(popup_a6356e4783724b1590547fe899b16dd7)
+        ;
+
+        
+    
+    
+            var marker_a588b65e5bf146b482739ad1b75c1c43 = L.marker(
+                [36.15496772, -86.29775884],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_1340e56fc92f46dd85fc5844ee196194 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_19082611ba854868bbdba052b4a1370e = $(`<div id="html_19082611ba854868bbdba052b4a1370e" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-Tennessee:1306796.0</div>`)[0];
+            popup_1340e56fc92f46dd85fc5844ee196194.setContent(html_19082611ba854868bbdba052b4a1370e);
+        
+
+        marker_a588b65e5bf146b482739ad1b75c1c43.bindPopup(popup_1340e56fc92f46dd85fc5844ee196194)
+        ;
+
+        
+    
+    
+            var marker_c85547fb88b24d0e9f1caa5d4cb5f94a = L.marker(
+                [28.86617238, -99.76050829],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_a23c6153552e4ed4854745cc1bd7f9f1 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_cc584e115b714cb690909a5f8cdcee34 = $(`<div id="html_cc584e115b714cb690909a5f8cdcee34" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-Texas:4311138.0</div>`)[0];
+            popup_a23c6153552e4ed4854745cc1bd7f9f1.setContent(html_cc584e115b714cb690909a5f8cdcee34);
+        
+
+        marker_c85547fb88b24d0e9f1caa5d4cb5f94a.bindPopup(popup_a23c6153552e4ed4854745cc1bd7f9f1)
+        ;
+
+        
+    
+    
+            var marker_fc4b9214221c45c4a979fce05797dba0 = L.marker(
+                [41.27116049, -111.9145117],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_8725d4dff9ff473db3ef6e45a29e1165 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1b386535b2484db3a891335822431e21 = $(`<div id="html_1b386535b2484db3a891335822431e21" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-Utah:586758.0</div>`)[0];
+            popup_8725d4dff9ff473db3ef6e45a29e1165.setContent(html_1b386535b2484db3a891335822431e21);
+        
+
+        marker_fc4b9214221c45c4a979fce05797dba0.bindPopup(popup_8725d4dff9ff473db3ef6e45a29e1165)
+        ;
+
+        
+    
+    
+            var marker_4fe2621050da4ac189d561fc791e0330 = L.marker(
+                [43.58010937, -72.58595157],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_a95183ec1e794f35a35c060517b9c494 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_94a4877cb17742cd94ecb14e21aca3d5 = $(`<div id="html_94a4877cb17742cd94ecb14e21aca3d5" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-Vermont:47609.0</div>`)[0];
+            popup_a95183ec1e794f35a35c060517b9c494.setContent(html_94a4877cb17742cd94ecb14e21aca3d5);
+        
+
+        marker_4fe2621050da4ac189d561fc791e0330.bindPopup(popup_a95183ec1e794f35a35c060517b9c494)
+        ;
+
+        
+    
+    
+            var marker_f7e4cf75b2b04a3b940a4f85bf144f2e = L.marker(
+                [18.3358, -64.8963],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_6ff6ead98fb04fd0aa783517d937f990 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9bcdb30544a94d7aa6e803f9b5824b6c = $(`<div id="html_9bcdb30544a94d7aa6e803f9b5824b6c" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-Virgin Islands:7466.0</div>`)[0];
+            popup_6ff6ead98fb04fd0aa783517d937f990.setContent(html_9bcdb30544a94d7aa6e803f9b5824b6c);
+        
+
+        marker_f7e4cf75b2b04a3b940a4f85bf144f2e.bindPopup(popup_6ff6ead98fb04fd0aa783517d937f990)
+        ;
+
+        
+    
+    
+            var marker_0a0f8f1c6c864baea89c55ba3106c4ce = L.marker(
+                [37.24374789, -76.54412815],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_fc43dd745cd04cb98bea051d9eb3f4ff = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f27eb243072b443c8026bd73354acc8a = $(`<div id="html_f27eb243072b443c8026bd73354acc8a" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-Virginia:957570.0</div>`)[0];
+            popup_fc43dd745cd04cb98bea051d9eb3f4ff.setContent(html_f27eb243072b443c8026bd73354acc8a);
+        
+
+        marker_0a0f8f1c6c864baea89c55ba3106c4ce.bindPopup(popup_fc43dd745cd04cb98bea051d9eb3f4ff)
+        ;
+
+        
+    
+    
+            var marker_5614e9a52b5f45c28cf029fad2488ed7 = L.marker(
+                [46.45738486, -120.73801259999999],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_8d20e2b322e349b9a1d86599e986b8db = L.popup({"maxWidth": "100%"});
+
+        
+            var html_94ed23d72d444c37890d124890e19609 = $(`<div id="html_94ed23d72d444c37890d124890e19609" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-Washington:766008.0</div>`)[0];
+            popup_8d20e2b322e349b9a1d86599e986b8db.setContent(html_94ed23d72d444c37890d124890e19609);
+        
+
+        marker_5614e9a52b5f45c28cf029fad2488ed7.bindPopup(popup_8d20e2b322e349b9a1d86599e986b8db)
+        ;
+
+        
+    
+    
+            var marker_917f0f867c4f47fea9c92284ee547622 = L.marker(
+                [37.612327, -81.54511071],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_2bf3e682ae364f6a932a07aeba739bb4 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_27b69041163f49bca3744245cf76e14b = $(`<div id="html_27b69041163f49bca3744245cf76e14b" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-West Virginia:289524.0</div>`)[0];
+            popup_2bf3e682ae364f6a932a07aeba739bb4.setContent(html_27b69041163f49bca3744245cf76e14b);
+        
+
+        marker_917f0f867c4f47fea9c92284ee547622.bindPopup(popup_2bf3e682ae364f6a932a07aeba739bb4)
+        ;
+
+        
+    
+    
+            var marker_0909603e4c814ffb8b88585539d644c4 = L.marker(
+                [44.45537896, -90.04158336],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_187f5ecf3aed4f0f91561f69efa03920 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_2fda745ff14f43d4ae59d65691c88f7d = $(`<div id="html_2fda745ff14f43d4ae59d65691c88f7d" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-Wisconsin:953422.0</div>`)[0];
+            popup_187f5ecf3aed4f0f91561f69efa03920.setContent(html_2fda745ff14f43d4ae59d65691c88f7d);
+        
+
+        marker_0909603e4c814ffb8b88585539d644c4.bindPopup(popup_187f5ecf3aed4f0f91561f69efa03920)
+        ;
+
+        
+    
+    
+            var marker_844630eb4f70423d817a5e183a076a97 = L.marker(
+                [43.83961191, -104.56748809999999],
+                {}
+            ).addTo(map_575d98e4549047c8b9ebf89842aa4e71);
+        
+    
+        var popup_f9f5afc96c6a4e368b303b0b0fad7a1b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9ebe06bee71946668f6cc96b0bc72d3b = $(`<div id="html_9ebe06bee71946668f6cc96b0bc72d3b" style="width: 100.0%; height: 100.0%;">United States_confirmed_cases-Wyoming:109802.0</div>`)[0];
+            popup_f9f5afc96c6a4e368b303b0b0fad7a1b.setContent(html_9ebe06bee71946668f6cc96b0bc72d3b);
+        
+
+        marker_844630eb4f70423d817a5e183a076a97.bindPopup(popup_f9f5afc96c6a4e368b303b0b0fad7a1b)
+        ;
+
+        
+    
+</script>
